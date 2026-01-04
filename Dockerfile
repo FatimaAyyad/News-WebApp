@@ -1,5 +1,17 @@
-FROM php:8.2-apache
+
+FROM php:8.2-apache AS build
+
 WORKDIR /var/www/html
+
+
 COPY src/ .
-RUN a2enmod rewrite
-RUN docker-php-ext-install mysqli
+
+
+FROM php:8.2-apache
+
+WORKDIR /var/www/html
+
+
+COPY --from=build /var/www/html /var/www/html
+
+EXPOSE 80
