@@ -25,11 +25,11 @@ consistent runtime behavior across different environments.
 ## Running the Project with Docker
 
 ### 1. Clone the repository
-```bash
-git clone https://github.com/FatimaAyyad/News-WebApp.git
-cd News-WebApp
+    ```bash
+    git clone https://github.com/FatimaAyyad/News-WebApp.git
+    cd News-WebApp
 
-### 2. . Build and start containers
+### 2.  Build and start containers
     docker-compose up --build -d
 3. Access the application
     Open your browser and visit:
