@@ -19,7 +19,7 @@ News-WebApp is a PHP/MySQL news management system that allows users to register,
 ## Build & Run with Docker
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/News-WebApp.git
+   git clone https://github.com/FatimaAyyad/News-WebApp.git
    cd News-WebApp
 2. Start containers:
     docker-compose up -d
