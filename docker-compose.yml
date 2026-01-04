@@ -4,27 +4,30 @@ services:
     container_name: news_web
     ports:
       - "8080:80"
-    healthcheck:
-        test: ["CMD", "curl", "-f", "http://localhost/health.php"]
-        interval: 30s
-        timeout: 10s
-        retries: 3
     volumes:
       - ./src:/var/www/html
     depends_on:
       - db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health.php"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   db:
     image: mysql:8.0
     container_name: news_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: news_db
+      MYSQL_USER: news_user
+      MYSQL_PASSWORD: news_pass
     ports:
       - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./db/news.sql:/docker-entrypoint-initdb.d/news.sql
 
 volumes:
   db_data:
