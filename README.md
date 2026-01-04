@@ -36,7 +36,7 @@ cd News-WebApp
     http://localhost:8080
 4. Stop the containers
     docker-compose down
-###Testing the Application
+### Testing the Application
     Create a new user account or log in
 
     Add, edit, and view news items
@@ -50,6 +50,6 @@ cd News-WebApp
 
     Multi-stage Docker build is used to reduce image size
 
-###Attribution
+### Attribution
 This project was designed and implemented by Fatima Ayyad as part of an
 Operating Systems Lab assignment.
