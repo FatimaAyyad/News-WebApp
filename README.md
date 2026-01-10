@@ -8,12 +8,16 @@ with support for image uploads and a responsive user interface.
 The project is fully containerized using Docker to ensure easy setup and
 consistent runtime behavior across different environments.
 
+---
+
 ## Features
 - User registration and authentication
 - Add, edit, and soft-delete news items
 - Categorize news by type
 - Upload and display images
 - Responsive and clean user interface
+
+---
 
 ## Tech Stack
 - PHP 8.2
@@ -22,12 +26,14 @@ consistent runtime behavior across different environments.
 - Docker
 - Docker Compose
 
+---
+
 ## Running the Project with Docker
 
 ### 1. Clone the repository
-    ```bash
-    git clone https://github.com/FatimaAyyad/News-WebApp.git
-    cd News-WebApp
+```bash
+git clone https://github.com/FatimaAyyad/News-WebApp.git
+cd News-WebApp
 
 ### 2.  Build and start containers
     docker-compose up --build -d
@@ -36,19 +42,34 @@ consistent runtime behavior across different environments.
     http://localhost:8080
 4. Stop the containers
     docker-compose down
+### Deployment Simulation (Assignment 3)
+To simulate a production deployment environment, the application was exposed
+publicly using Cloudflare Quick Tunnel.
+
+The application runs inside Docker containers locally and is made accessible
+over the internet without requiring a custom domain or VPS.
+  cloudflared tunnel --url http://localhost:8080
+This generates a temporary public URL in the following format:
+https://xxxx.trycloudflare.com
+##Note:
+The generated URL is temporary and only active while the tunnel is running.
+Screenshots were taken to document successful public access as required by
+the assignment.
+
 ### Testing the Application
-    Create a new user account or log in
+Create a new user account or log in
 
-    Add, edit, and view news items
+Add, edit, and view news items
 
-    Upload images and verify they appear in the interface
+Upload images and verify they appear correctly
 
-    Docker Notes
-    MySQL database is automatically initialized using an SQL script
+Docker Notes
+MySQL database is automatically initialized using an SQL script
 
-    A healthcheck endpoint is available at /health.php
+A healthcheck endpoint is available at /health.php
 
-    Multi-stage Docker build is used to reduce image size
+Multi-stage Docker build is used to reduce image size
+
 
 ### Attribution
 This project was designed and implemented by Fatima Ayyad as part of an
