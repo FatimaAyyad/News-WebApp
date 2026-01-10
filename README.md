@@ -35,28 +35,31 @@ consistent runtime behavior across different environments.
 git clone https://github.com/FatimaAyyad/News-WebApp.git
 cd News-WebApp
 
-### 2.  Build and start containers
+### 2.Build and start containers
+```bash
     docker-compose up --build -d
-3. Access the application
+### 3. Access the application
     Open your browser and visit:
     http://localhost:8080
-4. Stop the containers
+### 4. Stop the containers
     docker-compose down
-### Deployment Simulation (Assignment 3)
+# Deployment Simulation (Assignment 3)
 To simulate a production deployment environment, the application was exposed
 publicly using Cloudflare Quick Tunnel.
 
 The application runs inside Docker containers locally and is made accessible
 over the internet without requiring a custom domain or VPS.
+```bash
   cloudflared tunnel --url http://localhost:8080
 This generates a temporary public URL in the following format:
+```bash
 https://xxxx.trycloudflare.com
-##Note:
+## Note:
 The generated URL is temporary and only active while the tunnel is running.
 Screenshots were taken to document successful public access as required by
 the assignment.
 
-### Testing the Application
+## Testing the Application
 Create a new user account or log in
 
 Add, edit, and view news items
@@ -71,6 +74,6 @@ A healthcheck endpoint is available at /health.php
 Multi-stage Docker build is used to reduce image size
 
 
-### Attribution
+# Attribution
 This project was designed and implemented by Fatima Ayyad as part of an
 Operating Systems Lab assignment.
